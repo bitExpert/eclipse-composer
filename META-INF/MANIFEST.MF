@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Composer Eclipse Plugin
+Bundle-SymbolicName: de.bitexpert.eclipse.composer;singleton:=true
+Bundle-Version: 0.0.1
+Bundle-Activator: de.bitexpert.eclipse.composer.ComposerActivator
+Bundle-Vendor: bitExpert AG
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.ui.console;bundle-version="3.5.100"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Import-Package: org.eclipse.core.resources

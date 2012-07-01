@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+	<extension
+		point="org.eclipse.ui.popupMenus">
+
+		<objectContribution
+			objectClass="org.eclipse.core.resources.IFile"
+			nameFilter="composer.json"
+			id="de.bitexpert.eclipse.composer.composerFileMarker">
+			<menu
+				label="External Tools"
+				path="additions"
+				id="de.bitexpert.eclipse.popup.externalTools">
+				<separator name="content"/>
+			</menu>
+			<menu
+				label="Composer"
+				path="de.bitexpert.eclipse.popup.externalTools/composer"
+				id="de.bitexpert.eclipse.popup.externalTools.composer">
+				<separator name="content"/>
+			</menu>
+			<action
+				label="Update"
+				class="de.bitexpert.eclipse.composer.popup.actions.UpdateExecutor"
+				menubarPath="de.bitexpert.eclipse.popup.externalTools/de.bitexpert.eclipse.popup.externalTools.composer/content"
+				enablesFor="+"
+				id="de.bitexpert.eclipse.composer.actions.updateAction">
+			</action>
+			<action
+				label="Install"
+				class="de.bitexpert.eclipse.composer.popup.actions.InstallExecutor"
+				menubarPath="de.bitexpert.eclipse.popup.externalTools/de.bitexpert.eclipse.popup.externalTools.composer/content"
+				enablesFor="+"
+				id="de.bitexpert.eclipse.composer.actions.installAction">
+			</action>
+		</objectContribution>
+	</extension>
+
+	<extension
+		point="org.eclipse.ui.preferencePages">
+
+		<page
+			class="de.bitexpert.eclipse.composer.preferences.PreferencePage"
+			id="de.bitexpert.eclipse.composer.preferences.PreferencePage"
+			name="Composer">
+		</page>
+	</extension>
+</plugin>
